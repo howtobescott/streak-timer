@@ -5,24 +5,40 @@ var ms = 0;
 var s = 0;
 var m = 0;
 
-$("html").keypress(function(event) {
+//Spacebar timer trigger (Getting ready)
+$("html").keydown(function(){
+  $("#Timer").addClass("ready");
+});
+
+
+//Spacebar timer trigger (Starting timer)
+$("html").keyup(function(event) {
   if(isOn === false) {
     if(event.which === 32) {
+      $("#Timer").removeClass("ready");
+      isOn = true;
       start();
-      isOn === true;
-    }
-  } else {
-    if(event.which === 32) {
-      pause();
-      isOn === false;
     }
   }
+});
 
-})
+//Spacebar timer trigger (Starting timer)
+$("html").keyup(function(event) {
+  if(isOn === false) {
+    if(event.which === 32) {
+      $("#Timer").removeClass("ready");
+      isOn = true;
+      start();
+    }
+  }
+});
 
+
+// ----------------------------------------------------------------------------//
+//Stopwatch functionality
 function start() {
   if(!time) {
-    timer = setInterval(run, 10);
+    time = setInterval(run, 10);
   }
 }
 
