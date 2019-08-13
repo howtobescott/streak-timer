@@ -5,41 +5,24 @@ var ms = 0;
 var s = 0;
 var m = 0;
 
-//Spacebar timer trigger (Getting ready)
-$("html").keydown(function(){
+//Spacebar timer trigger (Getting ready and Stopping timer)
+$("html").keypress(function(){
   $("#Timer").addClass("ready");
-});
-
-
-//Spacebar timer trigger (Starting timer)
-$("html").keyup(function(event) {
-  if(isOn === false) {
-    if(event.which === 32) {
-      $("#Timer").removeClass("ready");
-      isOn = true;
-      start();
-    }
-  }
-});
-
-//Spacebar timer trigger (Starting timer)
-$("html").keyup(function(event) {
-  if(isOn === false) {
-    if(event.which === 32) {
-      $("#Timer").removeClass("ready");
-      isOn = true;
-      start();
-    }
-  }
-});
-
-//Spacebar timer trigger (Stopping timer)
-$("html").keyup(function(event) {
   if(isOn === true) {
     if(event.which === 32) {
-      $("#Timer").removeClass("ready");
+      stop();
       isOn = false;
-      pause();
+    }
+  }
+});
+
+//Spacebar timer trigger (Starting timer)
+$("html").keyup(function(event) {
+  if(isOn === false) {
+    if(event.which === 32) {
+      $("#Timer").removeClass("ready");
+      isOn = true;
+      start();
     }
   }
 });
@@ -71,7 +54,8 @@ function run() {
   }
 }
 
-function pause() {
+function stop() {
   clearInterval(time);
   time = false;
+  $("#Timer").css("color", "black");
 }
