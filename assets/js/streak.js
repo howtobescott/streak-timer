@@ -33,6 +33,17 @@ $("html").keyup(function(event) {
   }
 });
 
+//Spacebar timer trigger (Stopping timer)
+$("html").keyup(function(event) {
+  if(isOn === true) {
+    if(event.which === 32) {
+      $("#Timer").removeClass("ready");
+      isOn = false;
+      pause();
+    }
+  }
+});
+
 
 // ----------------------------------------------------------------------------//
 //Stopwatch functionality
