@@ -1,6 +1,6 @@
 var Timer = document.querySelector('#Timer');
 var time;
-var toggle = false;
+var isOn = false;
 var ms = 0;
 var s = 0;
 var m = 0;
@@ -9,22 +9,29 @@ var m = 0;
 $("html").keydown(function() {
   $("#Timer").addClass("ready");
   stop();
+  toggle();
 });
 
 //Spacebar timer trigger (Starting timer)
 $("html").keyup(function(event) {
-  if (toggle === false) {
+  if (isOn === false) {
     if (event.which === 32) {
       $("#Timer").removeClass("ready");
-      toggle = true;
+      isOn = true;
       start();
+      toggle();
     }
   }
 });
 
-
-
-
+//Dedicated function for changing state of timer w/o interfering with the key events.
+function toggle() {
+  if(isOn === false) {
+    isOn = true;
+  } else {
+    isOn = false;
+  }
+}
 
 
 // ----------------------------------------------------------------------------//
@@ -55,5 +62,5 @@ function run() {
 
 function stop() {
   clearInterval(time);
-  time = false;
+  time = false;s
 }
