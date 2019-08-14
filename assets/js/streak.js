@@ -5,24 +5,27 @@ var ms = 0;
 var s = 0;
 var m = 0;
 
-//Spacebar timer trigger (Getting ready and Stopping timer)
+
+//Spacebar timer trigger (Getting ready & Stopping)
 $("html").keydown(function() {
-  $("#Timer").addClass("ready");
-  stop();
-  toggle();
+  if (isOn === false && event.which === 32) {
+    $("#Timer").addClass("ready");
+    toggle();
+  } else {
+    stop();
+    toggle();
+  }
 });
 
 //Spacebar timer trigger (Starting timer)
 $("html").keyup(function(event) {
-  if (isOn === false) {
-    if (event.which === 32) {
+  if (isOn === true && event.which === 32) {
       $("#Timer").removeClass("ready");
-      isOn = true;
       start();
-      toggle();
-    }
   }
 });
+
+
 
 //Dedicated function for changing state of timer w/o interfering with the key events.
 function toggle() {
@@ -62,5 +65,5 @@ function run() {
 
 function stop() {
   clearInterval(time);
-  time = false;s
+  time = false;
 }
