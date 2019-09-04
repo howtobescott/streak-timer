@@ -4,6 +4,8 @@ var isOn = false;
 var ms = 0;
 var s = 0;
 var m = 0;
+var timeList = [];
+var goal = prompt("Enter your streak goal: ");
 
 
 //Spacebar timer trigger (Getting ready & Stopping)
@@ -14,6 +16,7 @@ $("html").keydown(function() {
   } else {
     stop();
     toggle();
+    list();
   }
 });
 
@@ -36,6 +39,12 @@ function toggle() {
   }
 }
 
+//Function for creating solve time list
+function list() {
+  for(i = 0; i < goal; i++) {
+    timeList[i] = Timer.textContent;
+  }
+}
 
 // ----------------------------------------------------------------------------//
 //Stopwatch functionalities
