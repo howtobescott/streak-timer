@@ -25,6 +25,7 @@ $("html").keyup(function(event) {
   if (isOn === true && event.which === 32) {
       $("#Timer").removeClass("ready");
       start();
+      reset();
   }
 });
 
@@ -41,9 +42,7 @@ function toggle() {
 
 //Function for creating solve time list
 function list() {
-  for(i = 0; i < goal; i++) {
-    timeList[i] = Timer.textContent;
-  }
+  timeList.push(Timer.textContent)
 }
 
 // ----------------------------------------------------------------------------//
@@ -75,4 +74,11 @@ function run() {
 function stop() {
   clearInterval(time);
   time = false;
+}
+
+function reset() {
+  m == 0;
+  ms == 0;
+  s == 0;
+  Timer.textContent = "0.00";
 }
