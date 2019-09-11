@@ -42,7 +42,7 @@ function toggle() {
 
 //Function for creating solve time list
 function list() {
-  timeList.push(Timer.textContent)
+  timeList.push(Timer.textContent);
 }
 
 // ----------------------------------------------------------------------------//
