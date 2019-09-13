@@ -1,11 +1,9 @@
 var Timer = document.querySelector('#Timer');
 var time;
 var isOn = false;
-var ms = 0;
-var s = 0;
-var m = 0;
+var ms = 0; var s = 0; var m = 0;
 var timeList = [];
-var goal = prompt("Enter your streak goal: ");
+var goal = prompt("Enter your global average: ");
 
 
 //Spacebar timer trigger (Getting ready & Stopping)
@@ -25,7 +23,6 @@ $("html").keyup(function(event) {
   if (isOn === true && event.which === 32) {
       $("#Timer").removeClass("ready");
       start();
-      reset();
   }
 });
 
@@ -49,12 +46,14 @@ function list() {
 //Stopwatch functionalities
 function start() {
   if(!time) {
+    reset();
     time = setInterval(run, 10);
+
   }
 }
 
 function run() {
-  if(m == 0 ) {
+  if(m == 0) {
     Timer.textContent = s + "." + ms;
   } else {
     Timer.textContent = m + "." + (s < 10 ? "0" + s : s) + "." + ms;
@@ -77,8 +76,8 @@ function stop() {
 }
 
 function reset() {
-  m == 0;
-  ms == 0;
-  s == 0;
+  m = 0;
+  ms = 0;
+  s = 0;
   Timer.textContent = "0.00";
 }
