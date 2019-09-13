@@ -8,10 +8,10 @@ var goal = prompt("Enter your global average: ");
 
 //Spacebar timer trigger (Getting ready & Stopping)
 $("html").keydown(function() {
-  if (isOn === false && event.which === 32) {
+  if (isOn === false && event.which == 32) {
     $("#Timer").addClass("ready");
     toggle();
-  } else {
+  } else if (isOn == true && event.which == 32) {
     stop();
     toggle();
     list();
@@ -20,7 +20,7 @@ $("html").keydown(function() {
 
 //Spacebar timer trigger (Starting timer)
 $("html").keyup(function(event) {
-  if (isOn === true && event.which === 32) {
+  if (isOn === true && event.which == 32) {
       $("#Timer").removeClass("ready");
       start();
   }
