@@ -3,10 +3,10 @@ var time;
 var isOn = false;
 var ms = 0; var s = 0; var m = 0;
 var timeList = [];
-var goal = prompt("Enter your global average: ");
+var global = prompt("Enter your global average: ");
 
 
-//Spacebar timer trigger (Getting ready & Stopping)
+//Spacebar timer trigger (Getting ready & Stopping):
 $("html").keydown(function() {
   if (isOn === false && event.which == 32) {
     $("#Timer").addClass("ready");
@@ -18,7 +18,8 @@ $("html").keydown(function() {
   }
 });
 
-//Spacebar timer trigger (Starting timer)
+
+//Spacebar timer trigger (Starting timer):
 $("html").keyup(function(event) {
   if (isOn === true && event.which == 32) {
       $("#Timer").removeClass("ready");
@@ -28,7 +29,8 @@ $("html").keyup(function(event) {
 
 
 
-//Dedicated function for changing state of timer w/o interfering with the key events.
+//Dedicated function for changing state of timer w/o
+//interfering with the key events:
 function toggle() {
   if(isOn === false) {
     isOn = true;
@@ -37,13 +39,28 @@ function toggle() {
   }
 }
 
+
 //Function for creating solve time list
 function list() {
-  timeList.push(Timer.textContent);
+  global = parseFloat(global);
+  solve = parseFloat(Timer.textContent);
+
+  while (solve <= global) {
+    timeList.push(Timer.textContent);
+    break
+  }
 }
 
-// ----------------------------------------------------------------------------//
-//Stopwatch functionalities
+
+//Comparing solve times to global average:
+//Parse string to float first:
+
+function compare() {
+
+}
+
+
+//Stopwatch functionalities:
 function start() {
   if(!time) {
     reset();
@@ -58,8 +75,8 @@ function run() {
   } else {
     Timer.textContent = m + "." + (s < 10 ? "0" + s : s) + "." + ms;
   }
-
   ms++;
+
   if(ms == 100) {
     ms = 0;
     s++;
