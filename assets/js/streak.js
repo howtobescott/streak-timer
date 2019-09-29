@@ -4,6 +4,9 @@ var isOn = false;
 var ms = 0; var s = 0; var m = 0;
 var timeList = [];
 var global = prompt("Enter your global average: ");
+var solve;
+var endStreak = false;
+var streak
 
 
 //Spacebar timer trigger (Getting ready & Stopping):
@@ -15,6 +18,7 @@ $("html").keydown(function() {
     stop();
     toggle();
     list();
+    compare();
   }
 });
 
@@ -29,8 +33,7 @@ $("html").keyup(function(event) {
 
 
 
-//Dedicated function for changing state of timer w/o
-//interfering with the key events:
+//Dedicated function for chan ents:
 function toggle() {
   if(isOn === false) {
     isOn = true;
@@ -42,23 +45,29 @@ function toggle() {
 
 //Function for creating solve time list
 function list() {
-  global = parseFloat(global);
-  solve = parseFloat(Timer.textContent);
 
-  //while (solve <= global) {
-    timeList.push(Timer.textContent);
-    break
+//Pushing solve to timeList
+  timeList.push(Timer.textContent);
+  solve = parseFloat(Timer.textContent)
+
   }
-}
+
 
 
 //Comparing solve times to global average:
 //Parse string to float first:
 
 function compare() {
+//Converting user input into float value
+    global = parseFloat(global);;
 
+    if(solve >= global) {
+      streak = timeList.length - 1
+      timeList = []
+      alert("Your streak is " + streak)
+      endStreak = false
+    }
 }
-
 
 //Stopwatch functionalities:
 function start() {
