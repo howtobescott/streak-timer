@@ -45,7 +45,7 @@ function list() {
   global = parseFloat(global);
   solve = parseFloat(Timer.textContent);
 
-  while (solve <= global) {
+  //while (solve <= global) {
     timeList.push(Timer.textContent);
     break
   }
