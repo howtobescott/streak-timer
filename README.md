@@ -7,7 +7,7 @@ Based off a practice drill concept done by legendary speedcuber [Feliks Zemdegs]
 ## Setup
 Unfortunately the application is not yet hosted on a proper server. To access and use the application do the following:
 ```bash
-git clone https://github.com/toado/kaboom.git
+git clone https://github.com/howtobescott/streak-timer.git
 cd streak-timer 
 open ./index.html
 ```
