@@ -21,4 +21,4 @@ Like most Rubik's cube timers the spacebar is used to start and stop the timer. 
 <img src="images/green.png" width="400">
 
 ## References
-[Video of Felik's doing this drill!](https://www.youtube.com/watch?v=UGOGvAQKSXE)
+[Video of Feliks doing this drill!](https://www.youtube.com/watch?v=UGOGvAQKSXE)
