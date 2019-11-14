@@ -13,6 +13,9 @@ open ./index.html
 ```
 ## How to use
 When first opening the application, the user is prompted to enter their global average. This is referring to a goal time to solve under, to properly practice a time slighty above the typical average of 12 of the user should be entered.
-
+![](images/Screenshot at Nov 13 20-31-50.png)
 Like most Rubik's cube timers the spacebar is used to start and stop the timer. Note that the timer is only ready when the color of the numbers turn green, this is to closely replicate the timer delay on stackmat timers that are used in official WCA competitions.
+![](images/green.png)
 
+## References
+[Video of Felik's doing this drill!](https://www.youtube.com/watch?v=UGOGvAQKSXE)
