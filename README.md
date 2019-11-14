@@ -1,5 +1,5 @@
 # Rubik's Streak Timer
-A Rubik's cube timer training app to help improve speed!
+A Rubik's cube timer training web app to help improve speed!
 
 ## Concept
 Based off a practice drill concept done by legendary speedcuber [Feliks Zemdegs](https://www.worldcubeassociation.org/persons/2009ZEMD01), the goal of the drill is to continuously complete solves under your global average. The main goal of this drill is to train focus when doing cubing sessions, full focus can lead to eliminating bad solves and gradually lower times.
